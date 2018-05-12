@@ -1,9 +1,13 @@
+
+var addButton=document.getElementById('add');
+addButton.addEventListener('click', addItem);
+
+
 function addItem(){
     var input= document.getElementById('input');
     var item= input.value;
     ul= document.getElementById('list');
     var textnode= document.createTextNode(item)
-
 
     if(item==''){
     return false;
@@ -13,9 +17,9 @@ function addItem(){
         var checkbox= document.createElement('input');
         checkbox.type='checkbox';
         checkbox.setAttribute('id', 'check');
-        //create lebel
-        var lebel= document.createElement('lebel');
-        lebel.setAttribute('for', 'item');
+        //create label
+        var label= document.createElement('label');
+        label.setAttribute('for', 'item');
 
         //add these elements on webpage
         ul.appendChild(label);
@@ -23,9 +27,17 @@ function addItem(){
         label.appendChild(textnode);
         li.appendChild(label);
         ul.insertBefore(li, ul.childNodes[0]);
-        li.className='visual';
+
+        setTimeout(()=>{
+            li.className='mycheck';
+        }, 100)
+
 
         input.value='';
     }
 
+}
+
+function a(){
+    alert("uu")
 }
